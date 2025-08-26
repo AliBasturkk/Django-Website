@@ -1,0 +1,248 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Services Hero Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #D12300 0%, #B01E00 50%, #D12300 100%); color: white; margin-top: 120px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                Profesyonel <span style="color: #000000;">Catering</span> Hizmetleri
+            </h1>
+            <p class="lead mb-4 opacity-90">
+                Kurumsal toplantılardan özel davetlere, aylık menülerden etkinlik cateringine kadar geniş hizmet yelpazesi
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Kurumsal Catering -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="service-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(45deg, #D12300, #B01E00);">
+                        <i class="fas fa-utensils fa-3x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="color: #000000;">İşyeri & Fabrika Catering</h5>
+                        <p class="card-text text-muted mb-4">
+                            İşyerleri, fabrikalar ve sanayi tesisleri için günlük personel yemek hizmeti
+                        </p>
+                        <div class="service-features mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Günlük menü seçenekleri</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Toplu yemek çözümleri</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Hijyenik tek kullanımlık ambalaj</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Özel Etkinlikler -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="service-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(45deg, #D12300, #B01E00);">
+                        <i class="fas fa-birthday-cake fa-3x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="color: #000000;">Özel Etkinlikler</h5>
+                        <p class="card-text text-muted mb-4">
+                            Ramazan iftar menüleri, cenaze yemekleri ve dini özel günler için toplu yemek hizmeti
+                        </p>
+                        <div class="service-features mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Geleneksel iftar menüleri</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Cenaze yemeği organizasyonu</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Mevlid ve kandil yemekleri</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Aylık Menü -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="service-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(45deg, #D12300, #B01E00);">
+                        <i class="fas fa-calendar-alt fa-3x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="color: #000000;">Aylık Menü</h5>
+                        <p class="card-text text-muted mb-4">
+                            Kurumlar için ayda 30 gün çeşitli menü ile düzenli yemek hizmeti
+                        </p>
+                        <div class="service-features mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Her gün farklı menü</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Mevsimlik ürün kullanımı</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Dengeli beslenme programı</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kurumsal Anlaşmalar -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="service-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(45deg, #D12300, #B01E00);">
+                        <i class="fas fa-handshake fa-3x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="color: #000000;">Kurumsal Anlaşmalar</h5>
+                        <p class="card-text text-muted mb-4">
+                            Büyük şirketler ve kuruluşlar için uzun vadeli catering anlaşmaları
+                        </p>
+                        <div class="service-features mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Büyük kişi sayıları</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Uzun vadeli planlaması</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: #D12300;"></i>
+                                <small class="text-muted">Özel fiyat teklifleri</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us with Zigzag Layout -->
+<section class="py-5" style="background-color: white;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold section-title">Neden Lezzet Catering?</h2>
+            <p class="text-muted fs-5">İstanbul'da catering sektöründe fark yaratan özelliklerimiz</p>
+        </div>
+        
+        <div class="zigzag-container">
+            <!-- First Item - Left -->
+            <div class="zigzag-item left">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="zigzag-content">
+                            <div class="zigzag-number">01</div>
+                            <h4 class="zigzag-title">10+ Yıl Deneyim</h4>
+                            <p class="zigzag-text">2013'ten beri İstanbul'da profesyonel catering hizmeti sunuyoruz. Yılların deneyimi ile sektördeki bilgi birikimimizi müşterilerimizin hizmetine sunuyoruz.</p>
+                            <div class="zigzag-features">
+                                <span class="feature-tag">2013'ten beri</span>
+                                <span class="feature-tag">Deneyimli Ekip</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="zigzag-visual">
+                            <div class="visual-circle">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Item - Right -->
+            <div class="zigzag-item right">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="zigzag-content">
+                            <div class="zigzag-number">02</div>
+                            <h4 class="zigzag-title">1000+ Mutlu Müşteri</h4>
+                            <p class="zigzag-text">Yüzlerce başarılı organizasyon ve memnun müşteri referansımız ile güvenilir hizmet anlayışımızı kanıtlamış durumdayız.</p>
+                            <div class="zigzag-features">
+                                <span class="feature-tag">Başarılı Organizasyonlar</span>
+                                <span class="feature-tag">Memnun Müşteriler</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="zigzag-visual">
+                            <div class="visual-circle">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Item - Left -->
+            <div class="zigzag-item left">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="zigzag-content">
+                            <div class="zigzag-number">03</div>
+                            <h4 class="zigzag-title">4.3/5 Google Puanı</h4>
+                            <p class="zigzag-text">Müşteri memnuniyetinde yüksek başarı oranımız, kaliteli hizmet anlayışımızın ve özverili çalışmalarımızın bir göstergesidir.</p>
+                            <div class="zigzag-features">
+                                <span class="feature-tag">Yüksek Puan</span>
+                                <span class="feature-tag">Müşteri Memnuniyeti</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="zigzag-visual">
+                            <div class="visual-circle">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth Item - Right -->
+            <div class="zigzag-item right">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="zigzag-content">
+                            <div class="zigzag-number">04</div>
+                            <h4 class="zigzag-title">HACCP Sertifikalı</h4>
+                            <p class="zigzag-text">Uluslararası hijyen standartlarında üretim yaparak müşterilerimize güvenli ve kaliteli yemek hizmeti sunuyoruz.</p>
+                            <div class="zigzag-features">
+                                <span class="feature-tag">Uluslararası Standart</span>
+                                <span class="feature-tag">Güvenli Üretim</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="zigzag-visual">
+                            <div class="visual-circle">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

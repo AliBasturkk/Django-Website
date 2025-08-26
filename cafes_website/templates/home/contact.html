@@ -1,0 +1,167 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="py-5"
+    style="background: linear-gradient(135deg, #D12300 0%, #B01E00 50%, #D12300 100%); color: white; margin-top: 120px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                Bizimle <span style="color: #000000;">İletişime</span> Geçin
+            </h1>
+            <p class="lead mb-4 opacity-90">
+                İstanbul catering hizmetleri hakkında bilgi almak ve <strong>ücretsiz teklif</strong> için bizimle
+                iletişime geçin
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Contact Section -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-form bg-white p-5 rounded-4 shadow-sm h-100">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="feature-icon me-3" style="width: 45px; height: 45px; margin: 0;">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <h3 class="h4 mb-0" style="color: #D12300;">Teklif Formu</h3>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label fw-medium">Ad Soyad *</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" required
+                                    placeholder="Adınızı ve soyadınızı girin">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label fw-medium">Telefon *</label>
+                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required
+                                    placeholder="0XXX XXX XX XX">
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-2">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-medium">E-posta *</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email"
+                                    required placeholder="ornek@email.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="company" class="form-label fw-medium">Şirket/Kurum</label>
+                                <input type="text" class="form-control form-control-lg" id="company" name="company"
+                                    placeholder="Şirket adı (isteğe bağlı)">
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="subject" class="form-label fw-medium">Hizmet Türü *</label>
+                            <select class="form-select form-select-lg" id="subject" name="subject" required>
+                                <option value="">Hizmet türünü seçiniz</option>
+                                <option value="catering">🍽️ Catering Hizmeti</option>
+                                <option value="menu">📋 Aylık Menü</option>
+                                <option value="corporate">🏢 Kurumsal Anlaşma</option>
+                                <option value="event">🎉 Özel Etkinlik</option>
+                                <option value="general">💬 Genel Bilgi</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="message" class="form-label fw-medium">Detaylı Bilgi *</label>
+                            <textarea class="form-control form-control-lg" id="message" name="message" rows="6" required
+                                placeholder="Etkinlik tarihi, kişi sayısı, özel istekleriniz vb. detayları buraya yazabilirsiniz..."></textarea>
+                        </div>
+
+                        <div class="mt-6 d-grid" style="margin-top: 6rem !important;">
+                            <button type="submit" class="btn btn-lg py-3 shadow-lg"
+                                style="background: linear-gradient(45deg, #D12300, #D12300); color: white; border: none;">
+                                <i class="fas fa-paper-plane me-2"></i>Ücretsiz Teklif İste
+                            </button>
+                        </div>
+
+                        <div class="mt-5 text-center" style="margin-top: 3rem !important;">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt me-1"></i>
+                                Bilgileriniz güvenle saklanır ve sadece teklif hazırlamak için kullanılır
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info Sidebar -->
+            <div class="col-lg-4">
+                <div class="contact-sidebar">
+                    <!-- Contact Information -->
+                    <div class="contact-card bg-white p-4 rounded-4 shadow-sm mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3" style="width: 40px; height: 40px; margin: 0;">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <h5 class="mb-0" style="color: #D12300;">Adresimiz</h5>
+                        </div>
+                        <p class="text-muted mb-0">
+                           Adresinizi buraya giriniz...<br>
+                            İstanbul, Türkiye
+                        </p>
+                    </div>
+
+                    <!-- Phone & Email -->
+                    <div class="contact-card bg-white p-4 rounded-4 shadow-sm mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3" style="width: 40px; height: 40px; margin: 0;">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <h5 class="mb-0" style="color: #D12300;">İletişim</h5>
+                        </div>
+                        <p class="mb-2">
+                            <i class="fas fa-phone me-2" style="color: #D12300;"></i>
+                            <span class="text-dark">0212 123 45 67</span>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fab fa-whatsapp me-2" style="color: #D12300;"></i>
+                            <a href="https://wa.me/905302072537" target="_blank" class="text-dark text-decoration-none">
+                                0555 123 45 67
+                            </a>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-envelope me-2" style="color: #D12300;"></i>
+                            <span class="text-dark">lezzetcatering@gmail.com</span>
+                        </p>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="contact-card bg-white p-4 rounded-4 shadow-sm mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3" style="width: 40px; height: 40px; margin: 0;">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <h5 class="mb-0" style="color: #D12300;">Çalışma Saatleri</h5>
+                        </div>
+                        <div class="working-hours text-muted">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Pazartesi - Cuma</span>
+                                <span class="fw-medium">07:00 - 19:00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Cumartesi</span>
+                                <span class="fw-medium">07:00 - 16:00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Pazar</span>
+                                <span class="text-danger">Kapalı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

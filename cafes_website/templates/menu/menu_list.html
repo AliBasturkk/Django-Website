@@ -1,0 +1,243 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Menu Hero Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #D12300 0%, #B01E00 50%, #D12300 100%); color: white; margin-top: 120px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                Lezzetli <span style="color: #000000;">Menü</span> Seçenekleri
+            </h1>
+            <p class="lead mb-4 opacity-90">
+                <strong>Ev yemekleri tadında</strong> lezzetler ve <strong>kaliteli malzemelerle</strong> 
+                hazırlanan özel menülerimizi keşfedin
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Categories -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <!-- Category Filter -->
+        <div class="text-center mb-5">
+            <h3 class="fw-bold mb-4" style="color: #D12300;">Menü Kategorileri</h3>
+            <div class="category-buttons d-flex flex-wrap justify-content-center gap-3">
+                <button type="button" class="category-btn active" data-filter="all">
+                    <i class="fas fa-th-large me-2"></i>Tüm Menüler
+                </button>
+                <button type="button" class="category-btn" data-filter="ana-yemek">
+                    <i class="fas fa-utensils me-2"></i>Ana Yemekler
+                </button>
+                <button type="button" class="category-btn" data-filter="corbalar">
+                    <i class="fas fa-mug-hot me-2"></i>Çorbalar
+                </button>
+                <button type="button" class="category-btn" data-filter="salatalar">
+                    <i class="fas fa-leaf me-2"></i>Salatalar
+                </button>
+                <button type="button" class="category-btn" data-filter="tatlilar">
+                    <i class="fas fa-birthday-cake me-2"></i>Tatlılar
+                </button>
+                <button type="button" class="category-btn" data-filter="icecekler">
+                    <i class="fas fa-glass-water me-2"></i>İçecekler
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Items Grid -->
+        <div class="row g-4" id="menuGrid">
+            
+            <!-- Tavuk Şiş -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="ana-yemek">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-drumstick-bite fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Tavuk Şiş</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "A001" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">Ana Yemekler</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            Marine edilmiş tavuk göğsü, sebzeler eşliğinde özel sosumuzla servis edilir
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Tavuk</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Sebze</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Pilav</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mercimek Çorbası -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="corbalar">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-mug-hot fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Mercimek Çorbası</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "C001" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">Çorbalar</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            Geleneksel tarifiyle hazırlanan, vitamin deposu kırmızı mercimek çorbası
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Mercimek</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Sebze</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Baharat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Çoban Salatası -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="salatalar">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-leaf fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Çoban Salatası</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "S001" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">Salatalar</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            Taze domates, salatalık, soğan ve maydanozla hazırlanan geleneksel Türk salatası
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Domates</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Salatalık</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Maydanoz</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Izgara Somon -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="ana-yemek">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-fish fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Izgara Somon</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "A002" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">Ana Yemekler</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            Taze somon fileto, ızgara sebzeleri ve özel sosumuzla servis edilir
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Somon</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Sebze</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Limon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Baklava -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="tatlilar">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-birthday-cake fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Baklava</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "T001" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">Tatlılar</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            El açması yufka ile hazırlanan geleneksel Türk tatlısı, fıstık ezmesi ile
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Yufka</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Fıstık</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">Şerbet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Taze Portakal Suyu -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="icecekler">
+                <div class="menu-card bg-white rounded-4 shadow-sm h-100 overflow-hidden">
+                    <div class="menu-placeholder d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(45deg, #FF3A1C, #D12300);">
+                        <i class="fas fa-glass-water fa-2x text-white"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold mb-0" style="color: #D12300;">Taze Portakal Suyu</h5>
+                            <span class="badge rounded-pill" style="background: #D12300; color: white;">
+                                {% for food in food_prices %}
+                                    {% if food.food_code == "I001" %}₺{{ food.current_price }}{% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                        <small class="text-muted">İçecekler</small>
+                        <p class="card-text text-muted mt-3 mb-3">
+                            Günlük taze portakallardan sıkılmış, doğal ve vitamin deposu portakal suyu
+                        </p>
+                        <div class="ingredients mb-3">
+                            <small class="fw-medium text-muted">İçindekiler:</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark me-1 mb-1">Portakal</span>
+                                <span class="badge bg-light text-dark me-1 mb-1">%100 Doğal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+

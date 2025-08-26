@@ -1,0 +1,147 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Monthly Menu Hero Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #D12300 0%, #B01E00 50%, #D12300 100%); color: white; margin-top: 120px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                Aylık <span style="color: #000000;">Menü</span>Programımız
+            </h1>
+            <p class="lead mb-4 opacity-90">
+                Her ay <strong>30 farklı menü</strong> ile çeşitli ve <strong>dengeli beslenme</strong> programı
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Current Month Menu -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        {% if current_menu %}
+        <div class="text-center mb-5">
+            <h2 class="fw-bold section-title">{{ current_menu.title }}</h2>
+            <p class="text-muted fs-5">{{ current_menu.get_month_display }} {{ current_menu.year }} - Günlük Menü Programı</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="menu-card bg-white rounded-4 shadow-sm overflow-hidden">
+                    <!-- Menu Header -->
+                    <div class="menu-header p-4" style="background: linear-gradient(45deg, #D12300, #B01E00); color: white;">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="mb-1">{{ current_menu.get_month_display }} {{ current_menu.year }} Menüsü</h4>
+                                <small class="opacity-90">30 Gün - 30 Farklı Menü</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Content -->
+                    <div class="menu-content p-4">
+                        <div class="menu-description mb-4">
+                            <div class="text-muted">
+                                {{ current_menu.content|linebreaks }}
+                            </div>
+                        </div>
+                        
+                        <!-- PDF Download -->
+                        {% if current_menu.pdf_file %}
+                        <div class="pdf-download text-center p-4 bg-light rounded-3">
+                            <div class="pdf-icon mb-3">
+                                <i class="fas fa-file-pdf fa-3x" style="color: #D12300;"></i>
+                            </div>
+                            <h6 class="fw-bold mb-2">Detaylı Menü Listesi</h6>
+                            <p class="text-muted mb-3">30 günün tüm menü detaylarını PDF olarak indirebilirsiniz</p>
+                            <a href="{{ current_menu.pdf_file.url }}" target="_blank" class="btn btn-lg px-4 py-3" style="background: linear-gradient(45deg, #D12300, #B01E00); color: white; border: none;">
+                                <i class="fas fa-download me-2"></i>PDF İndir
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="pdf-download text-center p-4 bg-light rounded-3">
+                            <div class="pdf-icon mb-3">
+                                <i class="fas fa-file-pdf fa-3x text-muted"></i>
+                            </div>
+                            <h6 class="fw-bold mb-2 text-muted">PDF Hazırlanıyor</h6>
+                            <p class="text-muted mb-3">Menü PDF'i yakında yüklenecektir</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <!-- No Current Menu -->
+        <div class="text-center">
+            <div class="no-menu-card bg-white rounded-4 shadow-sm p-5 mx-auto" style="max-width: 600px;">
+                <div class="no-menu-icon mb-4">
+                    <i class="fas fa-calendar-times fa-4x text-muted"></i>
+                </div>
+                <h4 class="fw-bold mb-3" style="color: #D12300;">Bu Ay İçin Menü Hazırlanıyor</h4>
+                <p class="text-muted mb-4">
+                    Şu anda aktif bir aylık menü bulunmamaktadır. 
+                    Yeni menü yakında yayınlanacaktır.
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Previous Months -->
+<section class="py-5" style="background-color: white;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold section-title">Geçmiş Menüler</h2>
+            <p class="text-muted fs-5">Önceki ayların menü arşivi</p>
+        </div>
+        
+        <div class="row g-4">
+            {% for menu in previous_menus %}
+            <div class="col-lg-4 col-md-6">
+                <div class="archive-card bg-white rounded-4 shadow-sm p-4 h-100 border position-relative" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.1)'">
+                    <!-- Card Header -->
+                    <div class="archive-header mb-3 d-flex justify-content-between align-items-start">
+                        <div>
+                            <h6 class="fw-bold mb-1" style="color: #D12300; font-size: 1.1rem;">{{ menu.get_month_display }} {{ menu.year }}</h6>
+                            <small class="text-muted fw-medium">{{ menu.title }}</small>
+                        </div>
+                        <div class="archive-badge">
+                            <i class="fas fa-calendar-alt" style="color: #D12300; opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="archive-content">
+                        <p class="text-muted mb-3" style="font-size: 0.9rem; line-height: 1.4; min-height: 60px;">
+                            {{ menu.content|truncatewords:12 }}
+                        </p>
+                        
+                        <!-- Action Button -->
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            {% if menu.pdf_file %}
+                            <a href="{{ menu.pdf_file.url }}" target="_blank" class="btn btn-sm px-3 py-2 flex-fill me-2" style="background: linear-gradient(45deg, #D12300, #B01E00); color: white; border: none; font-size: 0.85rem;">
+                                <i class="fas fa-download me-1"></i>PDF İndir
+                            </a>
+                            {% else %}
+                            <span class="badge bg-light text-muted border px-3 py-2 flex-fill text-center" style="font-size: 0.8rem;">
+                                <i class="fas fa-clock me-1"></i>PDF Hazırlanıyor
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="text-center p-5">
+                    <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                    <h6 class="text-muted">Henüz geçmiş menü bulunmamaktadır</h6>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

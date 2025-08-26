@@ -1,0 +1,102 @@
+<footer class="footer mt-5">
+    <div class="container">
+        <!-- Main Footer Content -->
+        <div class="row g-4 py-5">
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>İletişim Bilgileri</h5>
+                    <div class="contact-info">
+                        <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +90 212 123 45 67</p>
+                        <p class="mb-2"><i class="fab fa-whatsapp me-2"></i> +90 555 123 45 67</p>
+                        <p class="mb-2"><i class="fas fa-envelope me-2"></i> lezzetcatering@gmail.com</p>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> İstanbul, Türkiye</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>Hızlı Erişim</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'home' %}"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
+                        <li><a href="{% url 'about' %}"><i class="fas fa-chevron-right"></i> Hakkımızda</a></li>
+                        <li><a href="{% url 'services' %}"><i class="fas fa-chevron-right"></i> Hizmetlerimiz</a></li>
+                        <li><a href="{% url 'menu:menu_list' %}"><i class="fas fa-chevron-right"></i> Menülerimiz</a>
+                        </li>
+                        <li><a href="{% url 'contact' %}"><i class="fas fa-chevron-right"></i> İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>Hizmetlerimiz</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'services' %}"><i class="fas fa-industry"></i> Fabrika Yemekhane
+                                Catering</a></li>
+                        <li><a href="{% url 'menu:monthly_menu' %}"><i class="fas fa-calendar-alt"></i> Aylık Menü
+                                Planlama</a></li>
+                        <li><a href="{% url 'services' %}"><i class="fas fa-handshake"></i> Kurumsal Sözleşmeler</a>
+                        </li>
+                        <li><a href="{% url 'services' %}"><i class="fas fa-heart"></i> Özel Etkinlikler</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter & Social -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>Bize Ulaşın</h5>
+                    <p class="text-light mb-3">Güncel menülerimiz ve kampanyalarımızdan haberdar olmak için bültenimize
+                        abone olun.</p>
+
+                    <form class="newsletter-form mb-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="E-mail adresiniz" required>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="#" class="text-decoration-none"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none" title="WhatsApp"
+                            target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="row border-top pt-3 pb-2 mb-0">
+            <div class="col-md-6">
+                <p class="text-light mb-0">
+                    © 2025 <strong>Lezzet Catering</strong>. Tüm hakları saklıdır.
+                </p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="footer-links">
+                    <a href="{% url 'company_policy' %}" class="text-light text-decoration-none me-3">Gizlilik
+                        Politikası</a>
+                    <a href="#" class="text-light text-decoration-none me-3">Kullanım Şartları</a>
+                    <a href="#" class="text-light text-decoration-none">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</footer>

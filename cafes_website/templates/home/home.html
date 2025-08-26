@@ -1,0 +1,282 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-section text-white position-relative overflow-hidden" style="padding-top: 120px;">
+    <div class="container">
+        <div class="row align-items-center min-vh-100 py-5">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInLeft">
+                        Profesyonel <br>
+                        <span style="color: #000000; font-weight: 800;">Catering</span> <br>
+                        Hizmeti
+                    </h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInLeft animate__delay-1s opacity-90">
+                        Kafe, restoran ve kurumsal yemek hizmetlerinde İstanbul'da iş yerlerine, fabrikalara, kurumsal etkinlikler ve özel organizasyonlar için 
+                        <strong>hijyenik, lezzetli ve uygun fiyatlı</strong> catering çözümleri sunuyoruz.
+                    </p>
+                    
+                    <!-- Action Buttons -->
+                    <div class="d-flex flex-wrap gap-3 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="{% url 'contact' %}" class="btn btn-lg px-4 py-3 shadow-lg flex-fill" style="background: white; color: #000000; border: none; font-weight: 600;">
+                            <i class="fas fa-phone me-2"></i>İletişime Geçin
+                        </a>
+                        <a href="{% url 'menu:menu_list' %}" class="btn btn-lg px-4 py-3 shadow-lg flex-fill" style="background: white; color: #000000; border: 2px solid white; font-weight: 600;">
+                            <i class="fas fa-utensils me-2"></i>Menülerimizi İncele
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="row g-4 animate__animated animate__fadeInUp animate__delay-3s">
+                        <div class="col-4">
+                            <div class="text-center">
+                                <div class="h2 fw-bold mb-1 counter" data-target="500">1000+</div>
+                                <small style="color: black; font-weight: 600; font-size: 0.9rem;">Mutlu Müşteri</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center">
+                                <div class="h2 fw-bold mb-1">4.3⭐</div>
+                                <small style="color: black; font-weight: 600; font-size: 0.9rem;">Google Puanı</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center">
+                                <div class="h2 fw-bold mb-1 counter" data-target="10">10+</div>
+                                <small style="color: black; font-weight: 600; font-size: 0.9rem;">Yıl Deneyim</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="hero-image position-relative animate__animated animate__fadeInRight animate__delay-1s">
+                    <!-- Main Image -->
+                    <div class="main-image-container position-relative">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="img-fluid rounded-4 shadow-lg w-100" 
+                             alt="Lezzet Catering - İstanbul Profesyonel Yemek Hizmeti">
+                        
+                        <!-- Floating Cards -->
+                        <div class="floating-card position-absolute top-0 start-0 bg-white text-dark p-3 rounded-3 shadow" style="margin: 20px; animation: float 3s ease-in-out infinite;">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 40px; height: 40px; margin: 0;">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">7/24 Hizmet</div>
+                                    <small class="text-muted">Hızlı Teslimat</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-card position-absolute bottom-0 end-0 bg-white text-dark p-3 rounded-3 shadow" style="margin: 20px; animation: float 3s ease-in-out infinite reverse;">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 40px; height: 40px; margin: 0;">
+                                    <i class="fas fa-award text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Kalite Garantisi</div>
+                                    <small class="text-muted">Her Siparişte</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Decorations -->
+    <div class="hero-decoration position-absolute" style="top: 10%; right: 10%; width: 100px; height: 100px; border-radius: 50%; background: rgba(255,255,255,0.1); animation: float 4s ease-in-out infinite;"></div>
+    <div class="hero-decoration position-absolute" style="bottom: 20%; left: 5%; width: 60px; height: 60px; border-radius: 50%; background: rgba(209,35,0,0.2); animation: float 3s ease-in-out infinite reverse;"></div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold section-title">Neden Bizi Seçmelisiniz?</h2>
+            <p class="text-muted fs-5">Profesyonel catering hizmetimizin avantajları</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Feature Card 1 -->
+            <div class="col-lg-6">
+                <div class="feature-card modern-card h-100">
+                    <div class="card-content">
+                        <div class="feature-number">01</div>
+                        <div class="feature-badge">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="card-title">Hijyenik Üretim</h4>
+                        <p class="card-description">
+                            HACCP standartlarında hijyenik üretim ve kalite kontrol sistemi ile 
+                            gıda güvenliği garantisi sağlıyoruz.
+                        </p>
+                        <div class="feature-details">
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> HACCP Sertifikalı
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Günlük Kontrol
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-decoration card-decoration-1"></div>
+                </div>
+            </div>
+            
+            <!-- Feature Card 2 -->
+            <div class="col-lg-6">
+                <div class="feature-card modern-card h-100">
+                    <div class="card-content">
+                        <div class="feature-number">02</div>
+                        <div class="feature-badge">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4 class="card-title">Zamanında Teslimat</h4>
+                        <p class="card-description">
+                            Belirlenen saatte nokta atış teslimat garantisi ile 
+                            iş akışınızı aksatmayan hizmet anlayışı.
+                        </p>
+                        <div class="feature-details">
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Esnek Teslimat
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Sipariş Takibi
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-decoration card-decoration-2"></div>
+                </div>
+            </div>
+            
+            <!-- Feature Card 3 -->
+            <div class="col-lg-6">
+                <div class="feature-card modern-card h-100">
+                    <div class="card-content">
+                        <div class="feature-number">03</div>
+                        <div class="feature-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Kaliteli Malzeme</h4>
+                        <p class="card-description">
+                            En taze ve birinci sınıf malzemelerle hazırlanan yemekler, 
+                            tedarikçi kalite kontrol süreçleri.
+                        </p>
+                        <div class="feature-details">
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Taze Malzeme
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Günlük Tedarik
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-decoration card-decoration-3"></div>
+                </div>
+            </div>
+            
+            <!-- Feature Card 4 -->
+            <div class="col-lg-6">
+                <div class="feature-card modern-card h-100">
+                    <div class="card-content">
+                        <div class="feature-number">04</div>
+                        <div class="feature-badge">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="card-title">Ev Yemekleri Tadı</h4>
+                        <p class="card-description">
+                            Geleneksel ev yemekleri lezzeti ve sıcaklığı ile 
+                            nostaljik tatlar, aile sıcaklığı.
+                        </p>
+                        <div class="feature-details">
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Geleneksel Tarifler
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-check"></i> Özel Lezzet
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-decoration card-decoration-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<!-- CTA Section -->
+<section class="cta-section py-5 position-relative overflow-hidden">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="cta-content">
+                    <h2 class="display-5 fw-bold mb-3">
+                        Lezzet ve Kalitenin Buluştuğu Adres!
+                    </h2>
+                    <p class="lead mb-4">
+                        İş yerleri, fabrikalar, kurumsal etkinlikler, ramazan menüleri, cenaze yemekleri ve özel organizasyonlarınız için
+                        <strong>güvenilir hizmet anlayışımızla</strong> profesyonel hizmet.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 35px; height: 35px; margin: 0;">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <span>Şeffaf Fiyatlandırma</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 35px; height: 35px; margin: 0;">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <span>24 Saat İçinde Dönüş</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 35px; height: 35px; margin: 0;">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <span>%100 Hijyen Garantisi</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="feature-icon me-3" style="width: 35px; height: 35px; margin: 0;">
+                                    <i class="fas fa-star text-white"></i>
+                                </div>
+                                <span>4.3/5 Müşteri Memnuniyeti</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 text-center">
+                <div class="cta-buttons">
+                    <a href="{% url 'contact' %}" class="btn btn-light btn-lg mb-3 w-100 shadow-lg" style="background: linear-gradient(45deg, #D12300, #B01E00); color: white; border: none;">
+                        <i class="fas fa-envelope me-1"></i>Bizimle İletişime Geçin
+                    </a>
+                    <a href="tel:+902126232537" class="btn btn-lg w-100" onclick="return confirm('Lezzet Catering (0212 123 45 67) numarasını aramak istiyor musunuz?')" style="border: 2px solid #D12300; color: #D12300; background: transparent;">
+                        <i class="fas fa-phone-alt me-2"></i>Direkt Ara: 0212 123 45 67
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Pattern -->
+    <div class="cta-background-pattern position-absolute top-0 end-0"></div>
+</section>
+{% endblock %}
